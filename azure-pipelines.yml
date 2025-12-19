@@ -1,0 +1,49 @@
+trigger:
+- main
+
+pool:
+  vmImage: "ubuntu-latest"
+
+variables:
+- name: NODE_OPTIONS
+  value: --max_old_space_size=4096
+
+steps:
+
+  - task: NodeTool@0
+    inputs:
+      versionSpec: "18.x"
+    displayName: "Install Node.js"
+
+  - script: |
+      npm install
+      npm run build --if-present
+    displayName: "npm install and build"
+    # env:
+    #   AUTH0_SECRET: $(AUTH0_SECRET)
+    #   AUTH0_BASE_URL: $(AUTH0_BASE_URL)
+    #   AUTH0_ISSUER_BASE_URL: $(AUTH0_ISSUER_BASE_URL)
+    #   AUTH0_CLIENT_ID: $(AUTH0_CLIENT_ID)
+    #   AUTH0_CLIENT_SECRET: $(AUTH0_CLIENT_SECRET)
+    #   AUTH0_AUDIENCE: $(AUTH0_AUDIENCE)
+    #   API_URI: $(API_URI)
+    #   BASE_URL: $(BASE_URL)
+  - task: ArchiveFiles@1
+    displayName: "Archive files "
+    inputs:
+      rootFolder: "$(System.DefaultWorkingDirectory)"
+      includeRootFolder: false
+
+  - task: CopyFiles@2
+    displayName: "Copy File to: $(TargetFolder)"
+    inputs:
+      SourceFolder: "$(Build.ArtifactStagingDirectory)"
+      Contents: "$(Build.BuildId).zip"
+      TargetFolder: '$(Build.ArtifactStagingDirectory)\\ArtifactsToBePublished'
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish Artifact: SampleApp"
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)\\ArtifactsToBePublished'
+  
+  - task: PublishBuildArtifacts@1

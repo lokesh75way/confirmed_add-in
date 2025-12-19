@@ -1,0 +1,624 @@
+:root {
+  --primary: #41978f;
+  --secondary: #86e3a8;
+  --classic: #dc4949;
+  --salesforce: #029ddc;
+}
+
+/* main settings for the extension following brand guidelines, including font, color*/
+.main {
+  font-family: "Mulish";
+  text-align: center;
+}
+
+/* a primary button */
+.primary-btn {
+  background-color: var(--primary) !important;
+  border: none !important;
+  margin: 1% 1% 1% 1%;
+}
+
+/* a primary button with old branding */
+.primary-btn-classic {
+  background-color: var(--classic) !important;
+  border: none !important;
+  margin: 1% 1% 1% 1%;
+}
+
+.salesforce-login-btn {
+  background-color: var(--salesforce) !important;
+  border: none !important;
+  width: 66%;
+  margin: 1% 1% 1% 1%;
+}
+
+.flex-btn {
+  width: 40%;
+}
+
+.next-gen-flex-btn {
+  width: 26%;
+}
+
+.load-more {
+  position: fixed;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  bottom: 0px;
+  z-index: 10;
+}
+
+.pagination-text {
+  margin-top: 8px;
+  font-size: small;
+  white-space: nowrap;
+}
+
+.menu-tab {
+  font-size: 16px;
+  padding: 10px 8px;
+  cursor: pointer;
+  background: white;
+  border: 0;
+  outline: 0;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--primary);
+  width: 33.3%;
+}
+
+.button-group {
+  display: flex;
+}
+
+.card {
+  width: 80%;
+  margin: 5% auto;
+  text-align: left;
+  overflow: auto;
+  border-radius: 0.375rem;
+  border: 1px solid var(--primary);
+}
+
+/* Components css styling starts here */
+
+/* logout button */
+.logout {
+  z-index: 10;
+  position: fixed;
+  bottom: 2px;
+  right: 3px;
+  background-color: var(--primary);
+  padding: 7px 10px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logout:hover {
+  background-color: var(--secondary);
+}
+
+/* sync button - styled to match logout button */
+.sync {
+  z-index: 10;
+  position: fixed;
+  bottom: 2px;
+  left: 3px;
+  background-color: var(--primary);
+  padding: 7px 10px;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sync:hover {
+  background-color: var(--secondary);
+}
+
+/* Styles for when sync is in progress */
+.sync.syncing {
+  background-color: var(--secondary);
+  cursor: wait;
+}
+
+/* Fix rotation direction of sync button arrows */
+@keyframes spin {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.sync-button {
+  animation: spin 1s linear infinite;
+}
+
+/* Rotation animation for sync icon - now properly rotating clockwise */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.sync .rotating {
+  animation: rotate 1.5s linear infinite;
+}
+
+/* Autohide functionality for the sync button */
+.sync.autohide {
+  opacity: 0.3;
+  transition: opacity 0.3s ease;
+}
+
+.sync.autohide:hover {
+  opacity: 1;
+}
+
+/* Remove the previous sync-button styles */
+.sync-button {
+  display: none;
+}
+
+/* flexcal */
+#flexcal-share-link {
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.flexcal-add-btn {
+  border-color: var(--primary) !important;
+  color: var(--primary) !important;
+  background-color: transparent !important;
+  margin: 1% 1% 1% 1%;
+}
+
+.flexcal-remove-btn {
+  border-color: darkred !important;
+  color: darkred !important;
+  background-color: transparent !important;
+  margin: 1% 1% 1% 1%;
+}
+
+.flexcal-remove-icon {
+  color: darkred !important;
+  cursor: pointer;
+}
+
+.flexcal-form-name {
+  width: 50% !important;
+}
+
+/* Meeting Status */
+.meeting-status-icon-label {
+  justify-content: left;
+  display: flex;
+  align-items: center;
+  margin: 3% 2% 0% 2%;
+}
+
+.meeting-status-text-container {
+  margin: 3% 10%;
+  align-content: left;
+  overflow: auto;
+}
+
+.meeting-status-action-label {
+  color: #ffffff;
+  font-size: 14px;
+  border-radius: 5%;
+  padding-inline: 2% 2%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  display: block;
+  margin-left: 2%;
+}
+
+.meeting-status-search-bar {
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+  padding: 10px 38px;
+  margin-top: 10px;
+  background-color: #ffffff;
+}
+
+.meeting-status-card {
+  width: 80%;
+  margin: 5% auto;
+  text-align: left;
+  overflow: auto;
+  border-radius: 0.375rem;
+  border: 1px solid var(--primary);
+}
+
+.meeting-status-meeting-label {
+  justify-content: left;
+  font-size: 1.25rem;
+  word-wrap: break-word;
+  display: block;
+}
+
+.meeting-status-links {
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  margin-top: 3%;
+}
+
+.meeting-status-link {
+  text-decoration: none;
+  color: grey;
+  font-size: 14px;
+  float: left;
+  margin-right: 3%;
+  display: block;
+}
+
+.meeting-status-form-name {
+  width: 50% !important;
+  margin: auto;
+}
+
+.teal {
+  background-color: #009688;
+}
+
+.amber {
+  background-color: #ffc107;
+}
+
+.red {
+  background-color: #f44336;
+}
+
+.gray {
+  background-color: #9e9e9e;
+}
+
+.logo-image {
+  width: auto;
+  height: 20px;
+  margin: auto;
+}
+
+.card-container {
+  padding-top: 40px;
+  padding-bottom: 30px;
+}
+
+.header-margin {
+  margin-top: 70px;
+}
+
+.fade-in {
+  animation: fadeIn 2s;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.truncate {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.video-responsive {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+
+.video-responsive iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.left-justify-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  list-style-type: none;
+}
+
+.list-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.view {
+  height: calc(100vh - 50px);
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.connect-list {
+  height: 100%;
+  min-height: calc(100vh - 50px);
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  align-items: center;
+  justify-content: top;
+}
+
+/* Dropdown and field highlight styles */
+.typeahead-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Subtle highlight styles for active fields */
+.highlight-firstname {
+  background-color: rgba(65, 151, 143, 0.05) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.1rem rgba(65, 151, 143, 0.25) !important;
+}
+
+.highlight-lastname {
+  background-color: rgba(65, 151, 143, 0.05) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.1rem rgba(65, 151, 143, 0.25) !important;
+}
+
+.highlight-email {
+  background-color: rgba(65, 151, 143, 0.05) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.1rem rgba(65, 151, 143, 0.25) !important;
+}
+
+.highlight-phone {
+  background-color: rgba(65, 151, 143, 0.05) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.1rem rgba(65, 151, 143, 0.25) !important;
+}
+
+.highlight-subject {
+  background-color: rgba(65, 151, 143, 0.05) !important;
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 0.1rem rgba(65, 151, 143, 0.25) !important;
+}
+
+/* Enhanced dropdown styling */
+.dropdown-item {
+  padding: 6px 12px;
+  white-space: normal;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active {
+  background-color: rgba(65, 151, 143, 0.1) !important;
+}
+
+.dropdown-content {
+  padding: 3px 0;
+  width: 100%;
+}
+
+/* Adjust the react-bootstrap-typeahead dropdown popup */
+.rbt-menu {
+  width: auto !important;
+  max-width: none !important;
+}
+
+/* Ensure the dropdown is positioned properly */
+.rbt {
+  position: static !important;
+  width: 100%;
+}
+
+/* Specialized positioning for lastName dropdowns */
+.lastname-dropdown {
+  transform-origin: top left;
+}
+
+/* Ensure text doesn't overflow in dropdowns */
+.text-truncate {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Phone number styling in dropdown */
+.small-phone {
+  font-size: 0.9em;
+  /* This is the value you can adjust for different sizes */
+}
+
+/* Contact source icons styles */
+.contact-source-icon {
+  font-size: 14px;
+  margin-right: 5px;
+  cursor: help;
+}
+
+.salesforce-icon {
+  color: #029ddc;
+}
+
+.meeting-icon {
+  color: #34a853;
+}
+
+.user-icon {
+  color: #6c757d;
+}
+
+/* sync toast notification */
+.sync-toast {
+  position: fixed;
+  z-index: 1100;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 250px;
+  max-width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+  position: relative;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.custom-input {
+  width: 100%;
+  max-width: 100%;
+  padding: 14px 12px;
+  font-size: 14px;
+  border-radius: 16px;
+  border: 2px solid #d1d5db;
+  background: transparent;
+  outline: none;
+  color: #111827;
+  box-sizing: border-box;
+}
+
+.custom-input:focus {
+  border-color: #6366f1;
+}
+
+.custom-label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  font-size: 14px;
+  background: white;
+  padding: 0 6px;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+
+.custom-input:focus+.custom-label,
+.custom-input:not(:placeholder-shown)+.custom-label {
+  top: 0;
+  font-size: 12px;
+  color: #6366f1;
+}
+
+.input-group.filled .custom-label {
+  top: -1px;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.custom-input:focus~.custom-label,
+.custom-input:not(:placeholder-shown)~.custom-label {
+  transform: translateY(-20px) scale(0.85);
+  color: var(--primary);
+  background-color: white;
+}
+
+.timezone-select-container {
+  width: 100%;
+}
+
+.timezone-select__control {
+  border-radius: 16px !important;
+  border: 2px solid #d1d5db !important;
+  min-height: 38px;
+  box-shadow: none !important;
+  cursor: pointer;
+}
+
+.timezone-select__control--is-focused {
+  border-color: var(--primary) !important;
+  /* primary */
+}
+
+.required {
+  color: red;
+}
+
+.timezone-select__single-value {
+  font-size: 14px;
+  color: #111827;
+}
+
+.timezone-select__placeholder {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.timezone-select__indicator {
+  color: #6b7280;
+}
+
+.timezone-select__indicator-separator {
+  display: none;
+}
+
+.timezone-select__menu {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.field-wrapper {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.field-input {
+  width: 100%;
+  min-height: 38px;
+  padding: 8px 14px;
+  font-size: 14px;
+  color: #111827;
+
+  border-radius: 16px;
+  border: 2px solid #d1d5db;
+  background-color: transparent;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+.field-input:focus {
+  border-color: var(--primary) !important;
+}
