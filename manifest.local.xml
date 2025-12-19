@@ -9,12 +9,12 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName DefaultValue="Confirmed"/>
   <Description DefaultValue="With Confirmed, you'll reclaim time you often lose; and you'll gain effectiveness every day."/>
-  <IconUrl DefaultValue="https://localhost:3000/assets/logo-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/logo-128.png"/>
+  <IconUrl DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//assets/logo-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//assets/logo-128.png"/>
   <SupportUrl DefaultValue="https://www.confirmedapp.com/contact"/>
   <AppDomains>
     <AppDomain>https://auth.confirmedapp.com</AppDomain>
-    <AppDomain>https://localhost:3000</AppDomain>
+    <AppDomain>https://confirmedoutlookaddin.z20.web.core.windows.net/</AppDomain>
   </AppDomains>
   <Hosts>
     <Host Name="Mailbox"/>
@@ -27,7 +27,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+        <SourceLocation DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//taskpane.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -98,13 +98,13 @@
       </Hosts>
       <Resources>
         <bt:Images>
-          <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/logo-16.png"/>
-          <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/logo-32.png"/>
-          <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/logo-80.png"/>
+          <bt:Image id="Icon.16x16" DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//assets/logo-16.png"/>
+          <bt:Image id="Icon.32x32" DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//assets/logo-32.png"/>
+          <bt:Image id="Icon.80x80" DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//assets/logo-80.png"/>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
-          <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+          <bt:Url id="Commands.Url" DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//commands.html"/>
+          <bt:Url id="Taskpane.Url" DefaultValue="https://confirmedoutlookaddin.z20.web.core.windows.net//taskpane.html"/>
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="GroupLabel" DefaultValue="Confirmed"/>
